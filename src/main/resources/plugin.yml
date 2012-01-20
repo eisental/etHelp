@@ -1,0 +1,10 @@
+name: etHelp
+main: org.eisental.ethelp.HelpPlugin
+version: 0.1
+author: eisental
+depend: [RedstoneChips]
+commands:
+  help:
+    description: View or list help articles.
+    usage: |
+           /help
