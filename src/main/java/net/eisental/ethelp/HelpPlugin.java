@@ -1,5 +1,5 @@
 
-package org.eisental.ethelp;
+package net.eisental.ethelp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,14 +7,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
+import net.eisental.common.page.Pager;
+import net.eisental.common.parsing.ParsingUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.tal.redstonechips.command.CommandUtils;
-import org.tal.redstonechips.page.Pager;
 import org.yaml.snakeyaml.Yaml;
 
 /**
@@ -30,9 +29,7 @@ public class HelpPlugin extends JavaPlugin {
     static File DataFolder;
     
     @Override
-    public void onDisable() {
-        Logger.getLogger("Minecraft").info(this.getDescription().getName() + " " + this.getDescription().getVersion() + " is disabled.");
-    }
+    public void onDisable() {}
 
     @Override
     public void onEnable() {
@@ -46,8 +43,6 @@ public class HelpPlugin extends JavaPlugin {
         //getCommand("page").setExecutor(new PageCommand(this));
         
         updateList();
-        
-        Logger.getLogger("Minecraft").info(this.getDescription().getName() + " " + this.getDescription().getVersion() + " is enabled.");        
     }
 
     public void listArticles(CommandSender sender, Pattern p, boolean onepage) {
@@ -89,7 +84,7 @@ public class HelpPlugin extends JavaPlugin {
             Pager.beginPaging(sender, h.getTitle(), h.getContent(), infoColor, errorColor, linesPerPage);
         } catch (FileNotFoundException ie) {
             try {
-                String pattern = CommandUtils.convertGlobToRegex(articleId);
+                String pattern = ParsingUtils.convertGlobToRegex(articleId);
                 listArticles(sender, Pattern.compile(pattern), onepage);
             } catch (PatternSyntaxException e) { 
                 sender.sendMessage(errorColor + "Bad regex: " + e.getMessage());

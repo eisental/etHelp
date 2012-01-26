@@ -1,8 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package org.eisental.ethelp;
+package net.eisental.ethelp;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import org.tal.redstonechips.page.LineSource;
+import net.eisental.common.page.LineSource;
 import org.yaml.snakeyaml.Yaml;
 
 /**

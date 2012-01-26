@@ -27,14 +27,14 @@
             <version>1.1-R1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.tal</groupId>
-            <artifactId>RedstoneChips</artifactId>
-            <version>beta</version>
-        </dependency>
-        <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
             <version>1.9</version>
+        </dependency>
+        <dependency>
+            <groupId>net.eisental</groupId>
+            <artifactId>etCommon</artifactId>
+            <version>beta</version>
         </dependency>
     </dependencies>
 </project>
